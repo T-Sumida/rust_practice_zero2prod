@@ -1,6 +1,4 @@
-
-
-push: test audit fmt_check
+push: test
 	git push
 
 check:
@@ -12,7 +10,7 @@ test: fmt_check check
 fmt:
 	cargo fmt
 
-fmt_check:
+fmt_check: fmt
 	cargo clippy -- -D warnings
 	cargo fmt -- --check
 
